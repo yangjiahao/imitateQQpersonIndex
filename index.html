@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模仿手机QQ个人主页效果</title>
+    <script type="text/javascript" src="jquery.min.js" rel="stylesheet"></script>
+    <style>
+        .mainBox {
+            width: 450px;
+            height: 450px;
+            position: relative;
+            top: 50px;
+            left: 400px;
+        }
+
+        .loadColor1 {
+            top: 65px;
+            left: 65px;
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 90%;
+            -moz-border-radius: 90%;
+            background-image: -moz-linear-gradient(top, #FFF, #F00078);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F00078), color-stop(0, #F10));
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fa1ff', endColorstr='#f05e6f', GradientType=0);
+            FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr="#b8c4cb",endColorStr=red);
+
+            background: -ms-linear-gradient(top, #fff, #F00078);
+
+            background: -moz-linear-gradient(top, #FFF, #F00078);
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F00078));
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F00078));
+
+            background: -webkit-linear-gradient(top, #fff, #F00078);
+
+            background: -o-linear-gradient(top, #fff, #F00078);
+        }
+
+        .loadColor2 {
+            position: relative;
+            top: 15px;
+            left: 15px;
+            width: 290px;
+            height: 290px;
+            border-radius: 90%;
+            -moz-border-radius: 90%;
+            background-image: -moz-linear-gradient(top, #FFF, #FF8000);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #556), color-stop(0, #c66));
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#FF8000', GradientType=0);
+            background: -ms-linear-gradient(top, #fff, #FF8000);
+
+            background: -moz-linear-gradient(top, #FFF, #FF8000);
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#FF8000));
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#FF8000));
+
+            background: -webkit-linear-gradient(top, #fff, #FF8000);
+
+            background: -o-linear-gradient(top, #fff, #FF8000);
+
+        }
+
+        .loadColor3 {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            width: 250px;
+            height: 250px;
+            border-radius: 90%;
+            -moz-border-radius: 90%;
+            background-image: -moz-linear-gradient(top, #FFF, #00DB00);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f01), color-stop(0, #cdf));
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#00DB00', GradientType=0);
+            background: -ms-linear-gradient(top, #fff, #00DB00);
+
+            background: -moz-linear-gradient(top, #FFF, #00DB00);
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#00DB00));
+
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#00DB00));
+
+            background: -webkit-linear-gradient(top, #fff, #00DB00);
+
+            background: -o-linear-gradient(top, #fff, #00DB00);
+        }
+
+        .headPhoto {
+            position: relative;
+            top: 25px;
+            left: 25px;
+            width: 200px;
+            height: 200px;
+            border:1px solid white;
+            /*让div变成圆形*/
+            border-radius: 90%;
+            overflow: hidden;
+            background-color: #FFFFFF;
+            background: url(love1.png) no-repeat center center;
+            background-size: 200px 200px;
+        }
+
+        .hpItem {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .hpImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hpItem1 {
+            opacity: 1;
+        }
+
+        .smallBox {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            text-align: center;
+            line-height: 50px;
+            left: 0;
+            top: 0;
+        }
+
+        .round-ball {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: 90%;
+            background: rgba(21, 102, 205, 0.7);
+            color: #FFFFFF;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="mainBox" data-setting='{
+                                    "headPhoto":100,
+                                    "loadColor3":150,
+                                    "loadColor2":190,
+                                    "loadColor1":220,
+                                    "mainBox":350,
+                                    "smallBox":110,
+                                    "min_round_ball":50
+                                                }'>
+    <div class="loadColor1">
+        <div class="loadColor2">
+            <div class="loadColor3"><!--承载背景颜色的最大的div-->
+                <div class="headPhoto">
+                    <div class="hpItem hpItem1">
+                        <img src="1.jpg" class="hpImg">
+                    </div>
+                    <div class="hpItem">
+                        <img src="2.jpg" class="hpImg">
+                    </div>
+                    <div class="hpItem">
+                        <img src="3.jpg" class="hpImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>帅气</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>帅气</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>阳光</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>开朗</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>运动</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>IT男</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>恋爱ing</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+    <div class="smallBox">
+        <div class="round-ball">
+            <span>奋斗</span>
+        </div>
+    </div>
+    <!--图片周围的标签-->
+
+</div>
+<script>
+    (function set() {
+        var smallBox = $(".smallBox"),
+                size = smallBox.size(),//samllBox的length
+                ballBox = $(".round-ball"),
+                l = null,                 //鼠标点击的地方到smallBox左边框的距离
+                t = null,                 //鼠标点击的地方到smallBox上边框的距离
+                mainBox1 = document.getElementsByClassName("mainBox")[0],//获取包裹在最外层的div
+                mainBoxTop = mainBox1.offsetTop,     //mainBox到浏览器上边框的距离
+                mainBoxLeft = mainBox1.offsetLeft,   //mainBox到浏览器左边框的距离
+                setting={
+                    "headPhoto":200,
+                    "loadColor3":250,
+                    "loadColor2":290,
+                    "loadColor1":320,
+                    "mainBox":450,
+                    "smallBox":110,
+                    "min_round_ball":50
+                };
+        $.extend(setting,getSetting());
+        settingCss();
+        photoShow();          //最中央图片的初始化以及动画切换效果的设定
+        calculation();        //计算出每个周围小球的位置
+        ballBox.each(         //给周围的小球加上动画效果
+                function (i, elem) {
+                    elem.flag = 1;    //flag控制着每个小球是否有浮动的效果，1是开始浮动，0停止浮动
+                    ballMove(elem, 50); //小球开始浮动的函数
+                    $(elem).hover(function () {  //鼠标放在小球上停止浮动，移开又开始浮动
+                        this.flag = 0;
+                    }, function () {
+                        this.flag = 1;
+                        ballMove(this, 50);
+                    });
+                    elem.onmousedown = function (event1) {  //在此处必须加上event1，否则在火狐上无法正常使用，但是在IE,chrom可以不在function的（event）
+                        var $smallBox = $(this).parent();
+                        l = event1.clientX - this.parentNode.offsetLeft - mainBoxLeft;   //鼠标点击的地方到smallBox左边框的距离
+                        t = event1.clientY - this.parentNode.offsetTop - mainBoxTop;     //鼠标点击的地方到smallBox上边框的距离
+                        document.onmousemove = function (event2) {   //鼠标在小球上移动的监听，小球跟着鼠标移动
+                            $smallBox.css({
+                                top: event2.clientY - mainBoxTop - t,
+                                left: event2.clientX - mainBoxLeft - l
+                            });
+                        }
+                    };
+                    elem.onmouseup=function () {   //鼠标弹起的时候小球不跟着鼠标移动了
+                        document.onmousemove = null;
+
+                    }
+                    document.onmouseup = function () {  //解决鼠标按下之后移动过快，移出了小球的范围，出现的BU
+                        document.onmousemove = null;
+                    }
+                }
+        );
+
+
+        function getSetting  () {
+            var setting = $(".mainBox").attr("data-setting");
+            if (setting && setting != "") {
+                return $.parseJSON(setting);
+            } else {
+                return {};
+            };
+        }
+
+
+        function photoShow() {//先静态的展示中央的图片，然后设定切换动画
+            var timer = null,
+                    headPhoto = $(".headPhoto"),
+                    hpItems = headPhoto.find("div.hpItem"),
+                    photoLength = hpItems.size() - 1,
+                    flag = 0;   //flag标志着切换到第几张图片
+
+            timer = setInterval(function () {
+                if (flag == photoLength) {
+                    hpItems.eq(flag).animate({
+                        opacity: "0",
+                        width: setting.loadColor1,
+                        height: setting.loadColor1
+                    }, 2000, function () {
+                        flag = 0;
+                        hpItems.eq(flag).css({
+                            width: setting.loadColor1,
+                            height: setting.loadColor1
+                        });
+                        hpItems.eq(flag).animate({
+                            opacity: "1",
+                            width: setting.headPhoto,
+                            height: setting.headPhoto
+                        }, 2000);
+                    });
+
+                } else {
+                    hpItems.eq(flag).animate({
+                        opacity: "0",
+                        width: setting.loadColor1,
+                        height: setting.loadColor1
+                    }, 2000, function () {
+                        flag++;
+                        hpItems.eq(flag).css({
+                            width: setting.loadColor1,
+                            height: setting.loadColor1
+                        });
+                        hpItems.eq(flag).animate({
+                            opacity: "1",
+                            width: setting.headPhoto,
+                            height: setting.headPhoto
+                        }, 2000);
+                    });
+                }
+            }, 5000);
+        }
+
+        function calculation() {//计算smallBox的位置
+            var     mainBox=$(".mainBox"),
+                    x = Math.floor(mainBox.first().width() / smallBox.width()),
+                    y = Math.floor(mainBox.height() / smallBox.height()),
+                    xWidth = mainBox.width() / x,
+                    yHeight = mainBox.height() / y,
+                    flag = [],
+                    temp = null,
+                    ballWidth = smallBox.first().find('div.round-ball').width(),
+                    topOf = (mainBox.width() - ballWidth) / 2;
+
+            for (var i = 0; i < x; i++) {
+                flag[i] = [];
+                for (var j = 0; j < y; j++) {
+                    flag[i][j] = 0;
+                }
+            }
+            smallBox.each(           //每个小球都计算分配位置
+                    function (i) {
+                        $(this).css({
+                            top: topOf,
+                            left: topOf,
+                        });
+                        cal($(this));
+                    }
+            );
+
+            function cal($this) {   //计算然后把smallBox分别放在mainBox的四周
+                if (Math.floor(Math.random() * 2)) {//选到x
+                    if (Math.floor(Math.random() * 2))//选到x=0
+                    {
+                        judgeX(0, $this);
+                    }
+                    else {
+                        judgeX(x - 1, $this)
+                    }
+                }
+                else {//选到Y
+                    if (Math.floor(Math.random() * 2))//选到y=0
+                    {
+                        judgeY(0, $this);
+                    }
+                    else {
+                        judgeY(y - 1, $this);
+                    }
+                }
+            }
+
+            function judgeX(i, $this) {  //计算放在上边和下面
+                temp = Math.floor(Math.random() * x);
+                if (flag[i][temp] == 1) {
+                    cal($this);
+                } else {
+                    flag[i][temp] = 1;
+                    var add = 50 + Math.random() * 30;
+                    $this.animate({
+                        top: i * xWidth + Math.random() * 50,
+                        left: temp * yHeight,
+                        lineHeight: add
+                    }, 1000);
+                    $this.find("div.round-ball").animate({
+                        width: add,
+                        height: add
+                    });
+                }
+            }
+
+            function judgeY(i, $this) {   //计算放在左边和右边
+                temp = Math.floor(Math.random() * x);
+                if (flag[temp][i] == 1) {
+                    cal($this);
+                } else {
+                    flag[temp][i] = 1;
+                    var add = 50 + Math.random() * 30;
+                    $this.animate({
+                        top: temp * xWidth,
+                        left: i * yHeight + Math.random() * 50,
+                        lineHeight: add
+                    }, 1000);
+                    $this.find("div.round-ball").animate({
+                        width: add,
+                        height: add
+                    }, 1000);
+                }
+            }
+        }
+
+        function ballMove($this, width) {    //小球浮动
+            if ($this.flag == 0) {
+                return;
+            }
+            var topOf = null,
+                    leftOf = null;
+            topOf = Math.random() * width;
+            leftOf = Math.random() * width;
+            $($this).animate({
+                top: topOf,
+                left: leftOf
+            }, 2000, function () {
+                ballMove($this, width);
+            })
+        }
+        function settingCss(){
+            $(".mainBox").css({
+                width: setting.mainBox,
+                height: setting.mainBox
+            });
+            $(".loadColor1").css({
+                width: setting.loadColor1,
+                height: setting.loadColor1
+            });
+            $(".loadColor2").css({
+                width: setting.loadColor2,
+                height: setting.loadColor2
+            });
+            $(".loadColor3").css({
+                width: setting.loadColor3,
+                height: setting.loadColor3
+            });
+            $(".headPhoto").css({
+                width:setting.headPhoto,
+                height:setting.headPhoto,
+                backgroundSize:setting.headPhoto
+            });
+        }
+    })();
+</script>
+</body>
+</html>
